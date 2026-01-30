@@ -1,0 +1,5 @@
+[
+  { "name": "Varkey/John Kannarkatt", "gender": "male", "relation": "father of", "relative": "Pappachan Kannarkatt" },
+  { "name": "Pappachan Kannarkatt", "gender": "male", "relation": "son of", "relative": "Varkey/John Kannarkatt" },
+  { "name": "Prestina Challissery", "gender": "female", "relation": "spouse of", "relative": "Pappachan Kannarkatt" }
+]

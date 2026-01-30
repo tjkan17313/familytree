@@ -3,41 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Family Tree App</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Family Tree</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+    th, td { border: 1px solid #333; padding: 8px; text-align: left; }
+    th { background-color: #f4f4f4; }
+    input, select { padding: 5px; margin: 5px; }
+    button { padding: 8px 16px; margin: 5px 0; cursor: pointer; }
+  </style>
 </head>
 <body>
-  <h1>Family Tree App</h1>
+  <h1>Family Tree</h1>
 
-  <div class="form-container">
-    <h2>Add Family Member</h2>
-    <input id="nameInput" placeholder="Full Name">
-    <select id="genderInput">
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-    </select>
-    <button onclick="addPerson()">Add Person</button>
-  </div>
+  <h3>Add Family Member</h3>
+  <input type="text" id="nameInput" placeholder="Name">
 
-  <div class="form-container">
-    <h2>Add Relationship</h2>
-    <select id="personA"></select>
-    <select id="relationshipType">
-      <option value="fatherOf">Father of</option>
-      <option value="motherOf">Mother of</option>
-      <option value="sonOf">Son of</option>
-      <option value="daughterOf">Daughter of</option>
-      <option value="brotherOf">Brother of</option>
-      <option value="sisterOf">Sister of</option>
-    </select>
-    <select id="personB"></select>
-    <button onclick="addRelationship()">Add Relationship</button>
-  </div>
+  <select id="genderInput">
+    <option value="">Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
 
-  <div class="form-container">
-    <h2>Family Tree</h2>
-    <div id="tree"></div>
-  </div>
+  <select id="relationInput">
+    <option value="">Select Relation</option>
+    <option value="father of">Father of</option>
+    <option value="mother of">Mother of</option>
+    <option value="son of">Son of</option>
+    <option value="daughter of">Daughter of</option>
+    <option value="spouse of">Spouse of</option>
+    <option value="brother of">Brother of</option>
+    <option value="sister of">Sister of</option>
+  </select>
+
+  <select id="relativeInput">
+    <option value="">Select Relative</option>
+  </select>
+
+  <button id="addBtn">Add Member</button>
+  <br>
+
+  <button id="saveBtn">Show JSON</button>
+  <button id="hierarchyBtn">Show Hierarchy</button>
+
+  <table id="familyTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Relation</th>
+        <th>Relative</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
 
   <script src="app.js"></script>
 </body>
