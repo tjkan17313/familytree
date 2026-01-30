@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Tree App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Family Tree App</h1>
+
+  <div class="form-container">
+    <h2>Add Family Member</h2>
+    <input id="nameInput" placeholder="Full Name">
+    <select id="genderInput">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+    <button onclick="addPerson()">Add Person</button>
+  </div>
+
+  <div class="form-container">
+    <h2>Add Relationship</h2>
+    <select id="personA"></select>
+    <select id="relationshipType">
+      <option value="fatherOf">Father of</option>
+      <option value="motherOf">Mother of</option>
+      <option value="sonOf">Son of</option>
+      <option value="daughterOf">Daughter of</option>
+      <option value="brotherOf">Brother of</option>
+      <option value="sisterOf">Sister of</option>
+    </select>
+    <select id="personB"></select>
+    <button onclick="addRelationship()">Add Relationship</button>
+  </div>
+
+  <div class="form-container">
+    <h2>Family Tree</h2>
+    <div id="tree"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
