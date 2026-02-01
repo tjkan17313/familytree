@@ -1,64 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Family Tree</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    table { border-collapse: collapse; width: 100%; margin-top: 10px; }
-    th, td { border: 1px solid #333; padding: 8px; text-align: left; }
-    th { background-color: #f4f4f4; }
-    input, select { padding: 5px; margin: 5px; }
-    button { padding: 8px 16px; margin: 5px 0; cursor: pointer; }
-  </style>
+<meta charset="UTF-8">
+<title>Family Tree App</title>
+<style>
+body { font-family: Arial; padding: 20px; }
+section { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; }
+input, select, button { margin: 5px; }
+</style>
 </head>
 <body>
-  <h1>Family Tree</h1>
 
-  <h3>Add Family Member</h3>
-  <input type="text" id="nameInput" placeholder="Name">
+<h1>Family Tree App</h1>
 
-  <select id="genderInput">
-    <option value="">Select Gender</option>
-    <option value="male">Male</option>
-    <option value="female">Female</option>
-  </select>
+<section>
+<h2>Add Member</h2>
+<input id="memberName" placeholder="Name">
+<select id="memberGender">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+<button id="addMemberBtn">Add Member</button>
+</section>
 
-  <select id="relationInput">
-    <option value="">Select Relation</option>
-    <option value="father of">Father of</option>
-    <option value="mother of">Mother of</option>
-    <option value="son of">Son of</option>
-    <option value="daughter of">Daughter of</option>
-    <option value="spouse of">Spouse of</option>
-    <option value="brother of">Brother of</option>
-    <option value="sister of">Sister of</option>
-  </select>
+<section>
+<h2>Delete Member</h2>
+<select id="deleteMemberDropdown"></select>
+<button id="deleteMemberBtn">Delete Member</button>
+</section>
 
-  <select id="relativeInput">
-    <option value="">Select Relative</option>
-  </select>
+<section>
+<h2>Add Relationship</h2>
+Person A:
+<select id="relA"></select>
+Relationship:
+<select id="relType">
+<option value="father">father of</option>
+<option value="mother">mother of</option>
+<option value="brother">brother of</option>
+<option value="sister">sister of</option>
+<option value="son">son of</option>
+<option value="daughter">daughter of</option>
+<option value="spouse">spouse of</option>
+</select>
+Person B:
+<select id="relB"></select>
+<button id="addRelBtn">Add Relationship</button>
+</section>
 
-  <button id="addBtn">Add Member</button>
-  <br>
+<section>
+<h2>Delete Relationship</h2>
+<select id="deleteRelDropdown"></select>
+<button id="deleteRelBtn">Delete Relationship</button>
+</section>
 
-  <button id="saveBtn">Show JSON</button>
-  <button id="hierarchyBtn">Show Hierarchy</button>
+<section>
+<h2>Current Relationships</h2>
+<div id="relationshipList"></div>
+</section>
 
-  <table id="familyTable">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Gender</th>
-        <th>Relation</th>
-        <th>Relative</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+<section>
+<h2>Controls</h2>
+<button id="refreshBtn">Refresh</button>
+<button id="showJsonBtn">Show JSON</button>
+<button id="showTreeBtn">Show Tree</button>
+<button id="showMembersBtn">Show Members</button>
+<button id="saveJsonBtn">Save JSON</button>
+<br>
+<input type="file" id="loadJsonFile" accept=".json">
+<button id="loadJsonBtn">Load JSON</button>
+</section>
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

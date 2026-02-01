@@ -1,5 +1,31 @@
-[
-  { "name": "Varkey/John Kannarkatt", "gender": "male", "relation": "father of", "relative": "Pappachan Kannarkatt" },
-  { "name": "Pappachan Kannarkatt", "gender": "male", "relation": "son of", "relative": "Varkey/John Kannarkatt" },
-  { "name": "Prestina Challissery", "gender": "female", "relation": "spouse of", "relative": "Pappachan Kannarkatt" }
-]
+{
+  "members": [
+    {
+      "id": "p1",
+      "name": "Varkey Ouseph Kannarkat",
+      "gender": "male",
+      "relations": [
+        {
+          "type": "brother",
+          "target": "p2"
+        },
+        {
+          "type": "father",
+          "target": "p4"
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "name": "Fr. Berchmans CMI",
+      "gender": "male",
+      "relations": []
+    },
+    {
+      "id": "p4",
+      "name": "Pappachan Kannarkat",
+      "gender": "male",
+      "relations": []
+    }
+  ]
+}
